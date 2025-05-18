@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <title>Document</title>
+  </head>
+  <body class="bg-primary text-[#1E1E1C] font-inter px-4 leading-none">
+    <main>
+      <nav id="top" class="flex justify-between gap-7 items-center pt-4 md:pt-12.5 lg:max-w-395 m-auto">
+        <img src="/public/icons/image_3.png" alt="лого" class="h-9 w-auto md:h-16" />
+        <div
+          class="flex flex-col lg:flex-row gap-7 lg:items-center lg:justify-between max-w-5xl left-0 right-0 px-4 py-10 lg:p-0 h-[calc(100dvh-52px)] md:h-[calc(100dvh-112px)] lg:h-auto lg:w-full absolute lg:static -top-full bg-primary js-menu">
+          <div class="flex gap-2.5 items-center min-w-fit">
+            <img src="public/icons/eva_phone-call-fill.svg" alt="иконка" class="size-6" />
+            <p class="font-bold text-xs leading-relaxed">
+              +7 (916) 252-26-15 <br />
+              +7 (4872) 74-03-95
+            </p>
+          </div>
+          <div class="gap-2.5 items-center relative flex">
+            <img src="public/icons/bxs_map.svg" alt="иконка" class="size-6" />
+            <p class="font-bold text-xs leading-relaxed">
+              г. Тула <br />
+              <span class="font-medium"> ул. Московская, 34, оф. 22 (вход со двора, с торца, второй этаж) </span>
+            </p>
+            <p class="font-medium text-xs leading-relaxed absolute -bottom-5 left-8.5">
+              Посещение офиса по предварительной записи*
+            </p>
+          </div>
+          <button
+            data-target="contact1"
+            class="text-white bg-accent font-bold text-base leading-none py-5 px-6.5 rounded-full min-w-fit h-fit md:max-w-fit mt-5 lg:mt-0">
+            Бесплатная консультация
+          </button>
+        </div>
+        <button aria-label="открыть меню" class="flex flex-col gap-1.25 lg:hidden js-burger">
+          <div class="bg-black w-7 h-0.75 js-bar"></div>
+          <div class="bg-black w-7 h-0.75 js-bar"></div>
+          <div class="bg-black w-7 h-0.75 js-bar"></div>
+        </button>
+      </nav>
+
+      <header class="pb-14 md:pb-30">
+        <div
+          class="flex flex-col-reverse lg:grid lg:grid-cols-[648px_auto] max-w-6xl mx-auto w-full pt-4 md:pt-8 lg:pt-29">
+          <div
+            class="flex flex-col gap-4 md:gap-8 items-center md:items-start text-center md:text-left lg:min-w-[655px] lg:pt-11">
+            <h1 class="font-bold text-[32px] md:text-5xl">Установка септиков в Туле</h1>
+            <p class="font-normal text-lg text-center md:text-2xl md:text-left">
+              Оставьте заявку сейчас и мы бесплатно сделаем замеры, подберем очистное сооружение и доставим его к Вам!
+            </p>
+            <button
+              data-target="contact1"
+              class="text-white bg-accent font-bold text-base leading-none py-5 px-15 rounded-full min-w-fit h-fit md:max-w-fit mt-4 md:mt-8 md:text-2xl w-fit mx-auto md:mx-0">
+              Получить консультацию
+            </button>
+          </div>
+          <div class="w-full h-full flex items-center justify-center">
+            <img src="public/images/Group_5.png" alt="септики" class="object-contain w-full max-w-full h-auto" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-10 md:flex-row md:items-end md:justify-center pt-14 md:pt-6 lg:gap-24">
+          <div class="text-center">
+            <img src="public/icons/Frame_1000002996.svg" alt="иконка" class="size-12 mx-auto" />
+            <h2 class="font-semibold text-[20px] pt-4 md:text-[28px]">Скорость</h2>
+            <p class="text-base pt-2 md:text-lg md:pt-4">Производим монтаж за 1 день</p>
+          </div>
+          <div class="text-center">
+            <img src="public/icons/icon _layers f_.svg" alt="иконка" class="w-12 h-auto mx-auto" />
+            <h2 class="font-semibold text-[20px] pt-4 md:text-[28px]">Компактность</h2>
+            <p class="text-base pt-2 md:text-lg md:pt-4">Занимает всего 1 м2 на вашем участке</p>
+          </div>
+          <div class="text-center">
+            <img src="public/icons/Frame_1000002995.svg" alt="иконка" class="h-12 w-auto mx-auto" />
+            <h2 class="font-semibold text-[20px] pt-4 md:text-[28px]">Качество</h2>
+            <p class="text-base pt-2 md:text-lg md:pt-4">Очистка стоков на 98% без откачки</p>
+          </div>
+        </div>
+      </header>
+
+      <section id="Итал" class="max-w-384 lg:mx-auto pb-14 md:pb-16 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-50 lg:text-left">
+          Септики <span class="slider-title">Итал Био</span>
+        </h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-1 !static">
+            <div class="swiper-wrapper slider"></div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-1 absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-1 absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-1 mt-6 md:mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Аквалос" class="max-w-384 lg:mx-auto pb-14 md:pb-16 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-50 lg:text-left">
+          Септики <span class="slider-title">Аквалос</span>
+        </h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-2 !static">
+            <div class="swiper-wrapper slider"></div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-2 absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-2 absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-2 mt-6 md:mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Топас" class="max-w-384 lg:mx-auto pb-14 md:pb-16 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-50 lg:text-left">
+          Септики <span class="slider-title">Топас</span>
+        </h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-3 !static">
+            <div class="swiper-wrapper slider"></div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-3 absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-3 absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-3 mt-6 md:mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Юнилос" class="max-w-384 lg:mx-auto pb-14 md:pb-16 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-50 lg:text-left">
+          Септики <span class="slider-title">Юнилос Астра</span>
+        </h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-4 !static">
+            <div class="swiper-wrapper slider"></div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-4 absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-4 absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-4 mt-6 md:mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="Эко-Гранд" class="max-w-384 lg:mx-auto pb-14 md:pb-24 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-50 lg:text-left">
+          Септики <span class="slider-title">Эко-Гранд</span>
+        </h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-5 !static">
+            <div class="swiper-wrapper slider"></div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-5 absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-5 absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-5 mt-6 md:mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white -mx-4 px-4 py-8 md:py-13 relative overflow-x-clip">
+        <img
+          src="public/images/happy-young-man-architect-hard-hat-holding-folder 1.png"
+          alt="строитель"
+          class="absolute hidden lg:block bottom-0 left-[752px] xl:left-[calc((100dvw-1536px)/2+956px)] xl:w-[707px]" />
+        <form action="" class="max-w-384 xl:pl-51 mx-auto relative z-10">
+          <h2 class="font-bold text-2xl text-center md:text-[44px] md:text-left">
+            Пройдите краткий опрос и получите <br class="hidden md:block" />
+            дополнительную скидку!
+          </h2>
+          <div class="flex flex-col gap-6 pt-6 md:pt-8 lg:max-w-145">
+            <label for="city" class="flex flex-col gap-2 font-medium text-base md:text-xl">
+              1. В каком населенном пункте нужна уставновка септика?
+              <input
+                type="text"
+                name="city"
+                id="city"
+                class="mx-3 border-2 border-[#DDDDDD] bg-[#F8F6F5] rounded-lg outline-none h-10 px-2 md:pl-2.5 md:pr-5" />
+            </label>
+            <label for="people" class="flex flex-col gap-2 font-medium text-base md:text-xl">
+              2. Сколько человек постоянно проживает?
+              <input
+                type="text"
+                name="people"
+                id="people"
+                class="mx-3 border-2 border-[#DDDDDD] bg-[#F8F6F5] rounded-lg outline-none h-10 px-2 md:pl-2.5 md:pr-5" />
+            </label>
+            <label for="dist" class="flex flex-col gap-2 font-medium text-base md:text-xl">
+              3. Какое расстояние от дома к месту установки септика?
+              <input
+                type="text"
+                name="dist"
+                id="dist"
+                class="mx-3 border-2 border-[#DDDDDD] bg-[#F8F6F5] rounded-lg outline-none h-10 px-2 md:pl-2.5 md:pr-5" />
+            </label>
+            <label for="level" class="flex flex-col gap-2 font-medium text-base md:text-xl">
+              4. Какой уровень грунтовых вод?
+              <input
+                type="text"
+                name="level"
+                id="level"
+                class="mx-3 border-2 border-[#DDDDDD] bg-[#F8F6F5] rounded-lg outline-none h-10 px-2 md:pl-2.5 md:pr-5" />
+            </label>
+            <label for="depth" class="flex flex-col gap-2 font-medium text-base md:text-xl">
+              5. Какая глубина канализационной трубы?
+              <input
+                type="text"
+                name="depth"
+                id="depth"
+                class="mx-3 border-2 border-[#DDDDDD] bg-[#F8F6F5] rounded-lg outline-none h-10 px-2 md:pl-2.5 md:pr-5" />
+            </label>
+          </div>
+          <div class="flex flex-col gap-6 mt-8 md:mt-10 md:flex-row md:gap-8 md:w-full">
+            <input
+              type="text"
+              name="contact"
+              id="contact"
+              required
+              placeholder="Ваш номер телефона или e-mail"
+              class="placeholder:text-[#404040] placeholder:text-base outline-none border border-[#DDDDDD] bg-[#F8F6F5] px-6 h-15 flex justify-center rounded-[10px] md:h-17.5 md:w-full lg:max-w-145" />
+            <button
+              type="submit"
+              class="text-white bg-accent font-semibold text-base px-6 h-15 flex justify-center rounded-[10px] items-center md:h-17.5 md:w-55">
+              Отправить
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="works" class="max-w-375 lg:mx-auto pt-14 md:pt-24 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-46 lg:text-left">Наши работы</h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-0 !static">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide bg-white p-2 rounded-2xl pb-4 md:p-4 md:pb-12.5">
+                <img
+                  src="public/images/image_14.png"
+                  alt="изображение работ"
+                  class="aspect-[160/125] object-cover w-full rounded-lg md:rounded-3xl" />
+                <h3 class="font-semibold text-base text-center pt-2 md:pt-6 md:text-[28px]">
+                  Установка септика <br />Топас
+                </h3>
+              </div>
+              <div class="swiper-slide bg-white p-2 rounded-2xl pb-4 md:p-4 md:pb-12.5">
+                <img
+                  src="public/images/image2.png"
+                  alt="изображение работ"
+                  class="aspect-[160/125] object-cover w-full rounded-lg md:rounded-3xl" />
+                <h3 class="font-semibold text-base text-center pt-2 md:pt-6 md:text-[28px]">
+                  Установка септика <br />
+                  Юнилос Астра
+                </h3>
+              </div>
+              <div class="swiper-slide bg-white p-2 rounded-2xl pb-4 md:p-4 md:pb-12.5">
+                <img
+                  src="public/images/image.png"
+                  alt="изображение работ"
+                  class="aspect-[160/125] object-cover w-full rounded-lg md:rounded-3xl" />
+                <h3 class="font-semibold text-base text-center pt-2 md:pt-6 md:text-[28px]">
+                  Установка септика <br />
+                  Эко-Гранд
+                </h3>
+              </div>
+              <div class="swiper-slide bg-white p-2 rounded-2xl pb-4 md:p-4 md:pb-12.5">
+                <img
+                  src="public/images/image_14.png"
+                  alt="изображение работ"
+                  class="aspect-[160/125] object-cover w-full rounded-lg md:rounded-3xl" />
+                <h3 class="font-semibold text-base text-center pt-2 md:pt-6 md:text-[28px]">
+                  Установка септика <br />
+                  Топас
+                </h3>
+              </div>
+              <div class="swiper-slide bg-white p-2 rounded-2xl pb-4 md:p-4 md:pb-12.5">
+                <img
+                  src="public/images/image_14.png"
+                  alt="изображение работ"
+                  class="aspect-[160/125] object-cover w-full rounded-lg md:rounded-3xl" />
+                <h3 class="font-semibold text-base text-center pt-2 md:pt-6 md:text-[28px]">
+                  Установка септика <br />
+                  Топас
+                </h3>
+              </div>
+            </div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-0 absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-0 absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-0 mt-6 md:mt-8"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="testi" class="max-w-325 md:mx-auto pt-14 md:pt-24 -mx-2">
+        <h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-21 lg:text-left">
+          Что о нас говорят?
+        </h2>
+        <div class="relative px-2 md:px-13 lg:px-0">
+          <div class="swiper swiper-n !static">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide bg-white p-4 rounded-2xl md:rounded-[20px] md:p-6 md:pt-5">
+                <div class="flex gap-2.5 items-center">
+                  <img
+                    src="public/images/77e062297a9c4960cf40ce39e9835fd707d285c3.jpg"
+                    alt="изображение работ"
+                    class="size-12 rounded-full border-2 border-[#C4C4C4]" />
+                  <div>
+                    <p class="font-semibold text-sm pb-2">Анатолий К.</p>
+                    <div class="flex gap-1.5 py-0.5">
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                    </div>
+                  </div>
+                </div>
+                <p class="text-base md:text-lg pt-4 pb-10 md:pt-6 md:pb-8">
+                  Впервые с этой фирмой а точнее с мастером с большой буквы Русланом Николаевичем начали сотрудничать в
+                  сентябре 2015 года устанавливали септик Юнилос все было сделанно четко и в срок и даже обьяснили как
+                  самостоятельно обслуживать ...
+                </p>
+                <div class="flex justify-between items-center">
+                  <a href="#" class="font-semibold text-sm">Читать полность</a>
+                  <a href="#" class="font-semibold text-sm">Отзыв на “Яндекс”</a>
+                </div>
+              </div>
+              <div class="swiper-slide bg-white p-4 rounded-2xl md:rounded-[20px] md:p-6 md:pt-5">
+                <div class="flex gap-2.5 items-center">
+                  <img
+                    src="public/images/77e062297a9c4960cf40ce39e9835fd707d285c3.jpg"
+                    alt="изображение работ"
+                    class="size-12 rounded-full border-2 border-[#C4C4C4]" />
+                  <div>
+                    <p class="font-semibold text-sm pb-2">Виталий Ж.</p>
+                    <div class="flex gap-1.5 py-0.5">
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                    </div>
+                  </div>
+                </div>
+                <p class="text-base md:text-lg pt-4 pb-10 md:pt-6 md:pb-8">
+                  Установили станцию биологической очистки, подвели воду и канализацию к строящемуся дому, сделали
+                  дренаж и основу под дорожки. Со всеми трудностями справились - нет заезда на участок, не было ворот
+                  для вноса станции. Не оставляют в трудную ...
+                </p>
+                <div class="flex justify-between items-center">
+                  <a href="#" class="font-semibold text-sm">Читать полность</a>
+                  <a href="#" class="font-semibold text-sm">Отзыв на “Яндекс”</a>
+                </div>
+              </div>
+              <div class="swiper-slide bg-white p-4 rounded-2xl md:rounded-[20px] md:p-6 md:pt-5">
+                <div class="flex gap-2.5 items-center">
+                  <img
+                    src="public/images/9417077a7d7c18ad93be66040f6507f6f0015305.png"
+                    alt="изображение работ"
+                    class="size-12 rounded-full border-2 border-[#C4C4C4]" />
+                  <div>
+                    <p class="font-semibold text-sm pb-2">Наталья И.</p>
+                    <div class="flex gap-1.5 py-0.5">
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                      <img src="public/icons/star.svg" alt="звезда" class="size-4" />
+                    </div>
+                  </div>
+                </div>
+                <p class="text-base md:text-lg pt-4 pb-10 md:pt-6 md:pb-8">
+                  Мне установили септик в 2017 году,это команда профессионалов, сделали всё качественно,быстро,была
+                  очень плохая погода ( весь день шел дождь) поэтому ещё одно еольн в дренажном колодце пришлось
+                  приехать позже.Мы сейчас даже не предоставляем,как ...
+                </p>
+                <div class="flex justify-between items-center">
+                  <a href="#" class="font-semibold text-sm">Читать полность</a>
+                  <a href="#" class="font-semibold text-sm">Отзыв на “Яндекс”</a>
+                </div>
+              </div>
+            </div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-n absolute top-1/2 z-10 left-0 -translate-y-1/2">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-n absolute top-1/2 z-10 right-0 -translate-y-1/2">
+              <img src="public/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="public/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+          </div>
+        </div>
+        <a href="#" class="text-center font-medium text-lg mt-6 md:text-right md:text-xl md:mt-8 block md:mr-13 lg:mr-0"
+          >Показать все отзывы</a
+        >
+      </section>
+
+      <section id="contact1" class="max-w-305 md:mx-auto pt-14 md:pt-24 lg:pl-10">
+        <h2 class="font-bold text-2xl text-center pb-6 md:text-[44px] md:pb-8 lg:text-left">Остались вопросы?</h2>
+        <p class="text-center text-base font-medium pb-6 md:pb-12 md:text-xl md:text-left">
+          Получите бесплатную консультацию по вашему проекту от специалистов “Септик-1”
+        </p>
+        <form action="#" js-form class="flex flex-col gap-4 lg:grid lg:grid-cols-4 js-form">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            placeholder="Ваше имя"
+            class="placeholder:text-[#1E1E1C80] placeholder:text-base outline-none border border-[#DDDDDD] bg-white px-6 h-15 flex justify-center rounded-[10px] md:h-17.5 md:w-full" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            placeholder="Ваш E-mail"
+            class="placeholder:text-[#1E1E1C80] placeholder:text-base outline-none border border-[#DDDDDD] bg-white px-6 h-15 flex justify-center rounded-[10px] md:h-17.5 md:w-full" />
+          <div
+            class="border border-[#DDDDDD] bg-white px-6 h-15 flex rounded-[10px] md:h-17.5 md:w-full items-center gap-2">
+            <img src="public/icons/Image+Background+Shadow.svg" alt="флаг" class="w-4.5 h-auto" />
+            <span>+7</span>
+            <input
+              type="tel"
+              name="tel"
+              id="tel"
+              required
+              placeholder="(999) 999-99-99"
+              class="placeholder:text-[#1E1E1C80] placeholder:text-base outline-none js-phone" />
+          </div>
+          <button
+            type="submit"
+            class="text-white bg-accent font-semibold text-base px-6 h-15 flex justify-center rounded-[10px] items-center md:h-17.5">
+            Отправить
+          </button>
+        </form>
+        <div class="text-[13px] pt-4 md:pt-8">
+          Я даю согласие на обработку персональных данных и соглашаюсь c пользовательским соглашением и
+          <button class="inline-block font-medium">политикой конфиденциальности*</button>
+        </div>
+      </section>
+
+      <section class="max-w-326 md:mx-auto pt-14 md:pt-30">
+        <h2 class="font-bold text-2xl text-center pb-6 md:text-[44px] md:pb-8 lg:text-left lg:pl-21">Заголовок</h2>
+        <p class="text-base pb-4 md:text-lg md:pb-4.5">
+          Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз?
+          Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) —
+          вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб!
+          Где туз? Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп
+          (юфть) — вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй,
+          жлоб! Где туз? Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём
+          цен шляп (юфть) — вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай
+          Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц в шкаф. Экс-граф?
+        </p>
+        <p class="text-base md:text-lg">
+          Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! Любя, съешь щипцы, —
+          вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц в
+          шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! Любя, съешь
+          щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных
+          съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг!
+          Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз?
+          Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) —
+          вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль.
+        </p>
+      </section>
+
+      <section class="max-w-326 md:mx-auto pt-8 md:pt-16 pb-14 md:pb-24">
+        <h2 class="font-bold text-2xl text-center pb-6 md:text-[44px] md:pb-8 lg:text-left lg:pl-21">Заголовок</h2>
+        <p class="text-base pb-4 md:text-lg md:pb-4.5">
+          Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз?
+          Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) —
+          вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб!
+          Где туз? Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп
+          (юфть) — вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй,
+          жлоб! Где туз? Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём
+          цен шляп (юфть) — вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай
+          Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц в шкаф. Экс-граф?
+        </p>
+        <p class="text-base md:text-lg">
+          Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! Любя, съешь щипцы, —
+          вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных съёмщиц в
+          шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг! Любя, съешь
+          щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз? Прячь юных
+          съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) — вдрызг!
+          Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль. Эй, жлоб! Где туз?
+          Прячь юных съёмщиц в шкаф. Экс-граф? Плюш изъят. Бьём чуждый цен хвощ! Эх, чужак! Общий съём цен шляп (юфть) —
+          вдрызг! Любя, съешь щипцы, — вздохнёт мэр, — кайф жгуч. Шеф взъярён тчк щипцы с эхом гудбай Жюль.
+        </p>
+      </section>
+
+      <footer class="bg-white -mx-4 p-8 pb-4 md:pb-6 rounded-t-2xl md:rounded-t-4xl">
+        <div class="lg:max-w-325 m-auto flex justify-between gap-7 items-center pb-10 md:pb-7">
+          <img src="/public/icons/image_3.png" alt="лого" class="h-9 w-auto md:h-16" />
+          <button data-target="top" class="size-10 flex items-center justify-center md:hidden">
+            <img src="public/icons/Arrow_7.svg" alt="стрелка" />
+          </button>
+          <div class="hidden md:flex gap-2 flex-col">
+            <a href="#" class="font-medium text-lg">Главная</a>
+            <a data-target="Итал" href="#" class="font-medium text-lg">Септики Итал Био</a>
+            <a data-target="Аквалос" href="#" class="font-medium text-lg">Септики Аквалос</a>
+            <a data-target="Топас" href="#" class="font-medium text-lg">Септики Топас</a>
+            <a data-target="Юнилос" href="#" class="font-medium text-lg">Септики Юнилос Астра</a>
+            <a data-target="Эко-Гранд" href="#" class="font-medium text-lg">Септики Эко-Гранд</a>
+            <a data-target="works" href="#" class="font-medium text-lg">Наши работы</a>
+            <a data-target="testi" href="#" class="font-medium text-lg">Отзывы</a>
+          </div>
+          <div class="hidden lg:flex flex-col gap-6 justify-between xl:pl-22 xl:pr-33">
+            <div class="flex gap-2.5 items-center min-w-fit">
+              <img src="public/icons/eva_phone-call-fill.svg" alt="иконка" class="size-6" />
+              <p class="font-bold text-xs leading-relaxed">
+                +7 (916) 252-26-15 <br />
+                +7 (4872) 74-03-95
+              </p>
+            </div>
+            <div class="gap-2.5 items-center relative flex">
+              <img src="public/icons/bxs_map.svg" alt="иконка" class="size-6" />
+              <p class="font-bold text-xs leading-relaxed">
+                г. Тула <br />
+                <span class="font-medium"> ул. Московская, 34, оф. 22 (вход со двора, с торца, второй этаж) </span>
+              </p>
+              <p class="font-medium text-xs leading-relaxed absolute -bottom-5 left-8.5">
+                Посещение офиса по предварительной записи*
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="text-sm font-medium flex flex-col gap-1 items-center md:flex-row justify-center">
+          <p>© Все права защищены.</p>
+          <button>Политика конфиденциальности</button>
+        </div>
+      </footer>
+    </main>
+
+    <script src="src/js/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="src/js/page1.js"></script>
+  </body>
+</html>
