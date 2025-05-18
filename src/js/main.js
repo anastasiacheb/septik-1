@@ -59,13 +59,13 @@ function renderCards(data) {
       card.className = 'swiper-slide bg-white p-2 rounded-2xl md:rounded-[20px] pb-4 md:p-4 md:pb-8 text-center';
 
       card.innerHTML = `
-        <img src="public/images/${item.image}" alt="септик" class="aspect-[160/183] object-cover w-full rounded-2xl md:rounded-3xl bg-primary md:aspect-[303/274]" />
+        <img src="assets/images/${item.image}" alt="септик" class="aspect-[160/183] object-cover w-full rounded-2xl md:rounded-3xl bg-primary md:aspect-[303/274]" />
         <p class="font-medium text-base pt-4 md:text-2xl md:pt-3">${item.title}</p>
         <p class="font-bold text-xl pt-2 pb-4 md:text-[32px] md:pt-4 md:pb-3">₽${item.price1}</p>
         <p class="-mx-2 md:-mx-4 font-medium text-base pt-4 border-t border-primary italic md:text-[22px]">Септик+монтаж</p>
         <p class="font-bold text-xl pt-2 italic md:text-2xl md:pt-4">₽${item.price2}</p>
         <button class="text-white bg-accent rounded-lg flex gap-2 items-center justify-center w-full max-w-[175px] mx-auto mt-6 md:mt-12 text-sm md:text-lg h-8 md:h-10">
-        <img src="public/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</button>
+        <img src="assets/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</button>
       `;
       container[i].appendChild(card);
     });
