@@ -5,7 +5,7 @@ let burger = document.querySelector('.js-burger');
 let bars = document.querySelectorAll('.js-bar');
 
 burger.addEventListener('click', () => {
-  menu.classList.toggle('top-13');
+  menu.classList.toggle('top-15');
   menu.classList.toggle('md:top-28');
   bars[0].classList.toggle('rotate-45');
   bars[0].classList.toggle('translate-y-2');
@@ -14,20 +14,7 @@ burger.addEventListener('click', () => {
   bars[2].classList.toggle('-translate-y-2');
 });
 
-let buttons = document.querySelectorAll('[data-target]');
-
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', (e) => {
-    e.preventDefault();
-    let id = e.currentTarget.getAttribute('data-target');
-    let section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-}
-
-fetch('https://docs.google.com/spreadsheets/d/1mXI88VhZULwK34edZO2fRQJYo6IUE9D2fqQLbmmG9S0/gviz/tq?tqx=out:json')
+fetch('https://docs.google.com/spreadsheets/d/1uPas_hqXHmcYewWpLCbky9z9BFvwPj9qCbwswnUXzZQ/gviz/tq?tqx=out:json')
   .then((res) => res.text())
   .then((text) => {
     const json = JSON.parse(
@@ -50,10 +37,58 @@ fetch('https://docs.google.com/spreadsheets/d/1mXI88VhZULwK34edZO2fRQJYo6IUE9D2f
   });
 
 function renderCards(data) {
-  const container = document.querySelectorAll('.slider');
-  const title = document.querySelectorAll('.slider-title');
-  for (let i = 0; i < container.length; i++) {
-    const filtData = data.filter((item) => item.category === title[i].textContent);
+  const sectionWrap = document.querySelector('.js-section');
+  const linkWrap = document.querySelector('.js-links');
+  const uniqueCategories = [...new Set(data.map((it) => it.category))];
+
+  for (let i = 0; i < uniqueCategories.length; i++) {
+    const section = document.createElement('section');
+
+    section.className = 'max-w-384 lg:mx-auto pb-14 md:pb-16 -mx-2';
+    section.id = uniqueCategories[i];
+    section.innerHTML = `<h2 class="font-bold text-2xl text-center pb-8 md:text-[44px] md:pb-12 lg:pl-50 lg:text-left">
+          Септики <span class="slider-title">${uniqueCategories[i]}</span>
+        </h2>
+        <div class="relative px-2 md:px-13">
+          <div class="swiper swiper-${i + 1} !static">
+            <div class="swiper-wrapper slider"></div>
+
+            <button
+              aria-label="предыдущий слайд"
+              class="swiper-button-prev-${i + 1} absolute top-1/2 z-10 left-0 -translate-y-full">
+              <img src="assets/icons/Arrow_5.svg" alt="стрелка" class="md:hidden" />
+              <img src="assets/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block" />
+            </button>
+            <button
+              aria-label="следующий слайд"
+              class="swiper-button-next-${i + 1} absolute top-1/2 z-10 right-0 -translate-y-full">
+              <img src="assets/icons/Arrow_5.svg" alt="стрелка" class="md:hidden rotate-180" />
+              <img src="assets/icons/Arrow_1.svg" alt="стрелка" class="hidden md:block rotate-180" />
+            </button>
+            <div class="swiper-scrollbar swiper-scrollbar-${i + 1} mt-6 md:mt-8"></div>
+          </div>
+        </div>`;
+    sectionWrap.appendChild(section);
+
+    const link = document.createElement('a');
+    link.href = '';
+    link.className = 'font-medium text-lg';
+    link.setAttribute('data-target', uniqueCategories[i]);
+    link.textContent = `Септики ${uniqueCategories[i]}`;
+    linkWrap.appendChild(link);
+
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = e.currentTarget.getAttribute('data-target');
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    const sliderEl = section.querySelector(`.slider`);
+    const filtData = data.filter((item) => item.category === uniqueCategories[i]);
+
     filtData.forEach((item) => {
       const card = document.createElement('div');
       card.className = 'swiper-slide bg-white p-2 rounded-2xl md:rounded-[20px] pb-4 md:p-4 md:pb-8 text-center';
@@ -65,137 +100,48 @@ function renderCards(data) {
         <p class="-mx-2 md:-mx-4 font-medium text-base pt-4 border-t border-primary italic md:text-[22px]">Септик+монтаж</p>
         <p class="font-bold text-xl pt-2 italic md:text-2xl md:pt-4">₽${item.price2}</p>
         <button class="text-white bg-accent rounded-lg flex gap-2 items-center justify-center w-full max-w-[175px] mx-auto mt-6 md:mt-12 text-sm md:text-lg h-8 md:h-10">
-        <img src="assets/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</button>
+          <img src="assets/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</button>
       `;
-      container[i].appendChild(card);
+
+      sliderEl.appendChild(card);
+    });
+
+    new Swiper(`.swiper-${i + 1}`, {
+      slidesPerView: 2,
+      spaceBetween: 8,
+      breakpoints: {
+        768: {
+          spaceBetween: 32,
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 32,
+        },
+      },
+      navigation: {
+        nextEl: `.swiper-button-next-${i + 1}`,
+        prevEl: `.swiper-button-prev-${i + 1}`,
+      },
+      scrollbar: {
+        el: `.swiper-scrollbar-${i + 1}`,
+      },
     });
   }
 }
 
-const swiper1 = new Swiper('.swiper-1', {
-  slidesPerView: 2,
-  spaceBetween: 8,
+let buttons = document.querySelectorAll('[data-target]');
 
-  breakpoints: {
-    768: {
-      spaceBetween: 32,
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 32,
-    },
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next-1',
-    prevEl: '.swiper-button-prev-1',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar-1',
-  },
-});
-
-const swiper2 = new Swiper('.swiper-2', {
-  slidesPerView: 2,
-  spaceBetween: 8,
-
-  breakpoints: {
-    768: {
-      spaceBetween: 32,
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 32,
-    },
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next-2',
-    prevEl: '.swiper-button-prev-2',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar-2',
-  },
-});
-
-const swiper3 = new Swiper('.swiper-3', {
-  slidesPerView: 2,
-  spaceBetween: 8,
-
-  breakpoints: {
-    768: {
-      spaceBetween: 32,
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 32,
-    },
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next-3',
-    prevEl: '.swiper-button-prev-3',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar-3',
-  },
-});
-
-const swiper4 = new Swiper('.swiper-4', {
-  slidesPerView: 2,
-  spaceBetween: 8,
-
-  breakpoints: {
-    768: {
-      spaceBetween: 32,
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 32,
-    },
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next-4',
-    prevEl: '.swiper-button-prev-4',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar-4',
-  },
-});
-
-const swiper5 = new Swiper('.swiper-5', {
-  slidesPerView: 2,
-  spaceBetween: 8,
-
-  breakpoints: {
-    768: {
-      spaceBetween: 32,
-      slidesPerView: 3,
-    },
-    1024: {
-      slidesPerView: 4,
-      spaceBetween: 32,
-    },
-  },
-
-  navigation: {
-    nextEl: '.swiper-button-next-5',
-    prevEl: '.swiper-button-prev-5',
-  },
-
-  scrollbar: {
-    el: '.swiper-scrollbar-5',
-  },
-});
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener('click', (e) => {
+    e.preventDefault();
+    let id = e.currentTarget.getAttribute('data-target');
+    let section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+}
 
 const swiper = new Swiper('.swiper-0', {
   slidesPerView: 2,
@@ -265,11 +211,56 @@ phoneInput.addEventListener('input', () => {
   }
 });
 
-let form = document.querySelector('.js-form');
+// let form = document.querySelector('.js-form');
 
-form.addEventListener('submit', function (e) {
+// form.addEventListener('submit', function (e) {
+//   if (phoneInput.value.length !== 15) {
+//     e.preventDefault();
+//     alert('Введите полный номер телефона');
+//   } else {
+//     alert('Заявка получена! Мы свяжемся с вами в ближайшее время');
+//   }
+// });
+
+document.querySelector('.form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const emails = ['7891415z@mail.ru', 'errorrs@yandex.com'];
+
+  emails.forEach((email) => {
+    fetch(`https://formsubmit.co/${email}`, {
+      method: 'POST',
+      body: formData,
+    });
+  });
+
+  alert('Заявка получена! Мы свяжемся с вами в ближайшее время');
+  form.reset();
+});
+
+document.querySelector('.form2').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  const emails = ['7891415z@mail.ru', 'errorrs@yandex.com'];
+
+  emails.forEach((email) => {
+    fetch(`https://formsubmit.co/${email}`, {
+      method: 'POST',
+      body: formData,
+    });
+  });
+
   if (phoneInput.value.length !== 15) {
     e.preventDefault();
     alert('Введите полный номер телефона');
+  } else {
+    alert('Заявка получена! Мы свяжемся с вами в ближайшее время');
+    form.reset();
   }
 });
