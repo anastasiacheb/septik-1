@@ -116,7 +116,7 @@ function renderCards(data) {
         <p class="font-bold text-xl pt-2 pb-4 md:text-[32px] md:pt-4 md:pb-3">₽${item.price1}</p>
         <p class="-mx-2 md:-mx-4 font-medium text-base pt-4 border-t border-primary italic md:text-[22px]">Септик+монтаж</p>
         <p class="font-bold text-xl pt-2 italic md:text-2xl md:pt-4">₽${item.price2}</p>
-        <a href='${item.link}' class="text-white bg-accent rounded-lg flex gap-2 items-center justify-center w-full max-w-[175px] mx-auto mt-6 md:mt-12 text-sm md:text-lg h-8 md:h-10">
+        <a href='${item.link}' target="_blank" class="text-white bg-accent rounded-lg flex gap-2 items-center justify-center w-full max-w-[175px] mx-auto mt-6 md:mt-12 text-sm md:text-lg h-8 md:h-10">
           <img src="assets/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</a>
       `;
 
