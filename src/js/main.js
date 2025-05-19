@@ -39,6 +39,7 @@ fetch('https://docs.google.com/spreadsheets/d/1uPas_hqXHmcYewWpLCbky9z9BFvwPj9qC
 function renderCards(data) {
   const sectionWrap = document.querySelector('.js-section');
   const linkWrap = document.querySelector('.js-links');
+  const linkWrap2 = document.querySelector('.js-links2');
   const uniqueCategories = [...new Set(data.map((it) => it.category))];
 
   for (let i = 0; i < uniqueCategories.length; i++) {
@@ -86,6 +87,22 @@ function renderCards(data) {
       }
     });
 
+    const link2 = document.createElement('a');
+    link2.href = '';
+    link2.className = 'font-medium text-lg';
+    link2.setAttribute('data-target', uniqueCategories[i]);
+    link2.textContent = `Септики ${uniqueCategories[i]}`;
+    linkWrap2.appendChild(link2);
+
+    link2.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = e.currentTarget.getAttribute('data-target');
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
     const sliderEl = section.querySelector(`.slider`);
     const filtData = data.filter((item) => item.category === uniqueCategories[i]);
 
@@ -99,8 +116,8 @@ function renderCards(data) {
         <p class="font-bold text-xl pt-2 pb-4 md:text-[32px] md:pt-4 md:pb-3">₽${item.price1}</p>
         <p class="-mx-2 md:-mx-4 font-medium text-base pt-4 border-t border-primary italic md:text-[22px]">Септик+монтаж</p>
         <p class="font-bold text-xl pt-2 italic md:text-2xl md:pt-4">₽${item.price2}</p>
-        <button class="text-white bg-accent rounded-lg flex gap-2 items-center justify-center w-full max-w-[175px] mx-auto mt-6 md:mt-12 text-sm md:text-lg h-8 md:h-10">
-          <img src="assets/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</button>
+        <a href='${item.link}' class="text-white bg-accent rounded-lg flex gap-2 items-center justify-center w-full max-w-[175px] mx-auto mt-6 md:mt-12 text-sm md:text-lg h-8 md:h-10">
+          <img src="assets/icons/majesticons_open.svg" alt="иконка" class="size-3.5 md:size-4.5" />Подробнее</a>
       `;
 
       sliderEl.appendChild(card);
