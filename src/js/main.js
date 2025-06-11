@@ -243,7 +243,6 @@ document.querySelector('.form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const form = e.target;
-  const formData = new FormData(form);
 
   const emails = ['nas.cheb88@gmail.com', 'anachebotova@gmail.com'];
 
@@ -264,7 +263,6 @@ document.querySelector('.form2').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const form = e.target;
-  const formData = new FormData(form);
 
   const emails = ['nas.cheb88@gmail.com', 'anachebotova@gmail.com'];
 
