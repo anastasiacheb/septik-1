@@ -248,6 +248,8 @@ document.querySelector('.form').addEventListener('submit', function (e) {
   const emails = ['nas.cheb88@gmail.com', 'anachebotova@gmail.com'];
 
   emails.forEach((email) => {
+    const formData = new FormData(form);
+
     fetch(`https://formsubmit.co/${email}`, {
       method: 'POST',
       body: formData,
@@ -267,6 +269,8 @@ document.querySelector('.form2').addEventListener('submit', function (e) {
   const emails = ['nas.cheb88@gmail.com', 'anachebotova@gmail.com'];
 
   emails.forEach((email) => {
+    const formData = new FormData(form);
+
     fetch(`https://formsubmit.co/${email}`, {
       method: 'POST',
       body: formData,
